@@ -10,7 +10,7 @@ class TestQuickFindEager(unittest.TestCase):
       quick.join(1, 5)
       quick.join(0, 1)
       
-      self.assertEqual(quick.is_connected(1, 7), False)
+      self.assertEqual(quick.is_connected(1, 7), True)
 
 
 if __name__ == '__main__':
