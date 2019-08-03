@@ -15,13 +15,17 @@ class QuickFind():
     @params size: Max size of the array
     """
     self.quick_list = [i for i in range(size)]
+  
+  def root(self, node):
+    while node != self.quick_list[node]:
+      node = self.quick_list[node]
+    return node
 
   def join(self, node1, node2):
-    value = self.quick_list[node2]
-    for i in range(len(self.quick_list)):
-      if (self.quick_list[i] == value):
-        self.quick_list[i] = self.quick_list[node1]
+    root_of_node1 = self.root(node1)
+    root_of_node2 = self.root(node2)
+    self.quick_list[root_of_node1] = self.quick_list[root_of_node2]
   
   def is_connected(self, first, second):
     """is_connected(first, second) -> bool"""
-    return (self.quick_list[first] == self.quick_list[second])
+    return (self.root(first) == self.root(second))
