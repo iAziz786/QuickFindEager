@@ -21,7 +21,6 @@ class QuickFind():
     for i in range(len(self.quick_list)):
       if (self.quick_list[i] == value):
         self.quick_list[i] = self.quick_list[node1]
-    print(self.quick_list)
   
   def is_connected(self, first, second):
     """is_connected(first, second) -> bool"""
